@@ -1,4 +1,4 @@
-# 🔧 Troubles Encountered and Their Resolution
+# Troubles Encountered and Their Resolution
 
 This document captures incidents and their resolutions during lab development.  
 It complements the main **Virtualization Journey** by focusing on failures, diagnostics, and recovery steps.
