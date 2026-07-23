@@ -16,8 +16,9 @@ It complements the main **Virtualization Journey** by focusing on failures, diag
   - New Monitor obtained to replace damaged one and spare for use on backup PC to avoid sharing.
   - Removed/reinstalled M6000 GPU → no change.  
   - Tested with low‑cost AMD GPU → same issue.  
-  - CMOS reset (battery replaced, 10 min unpowered) → system posted.
-  - CMOS battery swap was likely cause as it was at least 3 years old when purchased, likely much older, HP workstations default to RAID and likely wont detect operating system unless it was all configured in primary RAID configuration, (AHCI more common in domestic PCs).
+  - CMOS reset (battery replaced after removing for 10 min unpowered, the installed) → system posted.
+  - CMOS battery swap was likely cause as it was at least 3 years old when purchased, likely much older, 
+- HP workstations default to RAID, in this case bios would not detect operating system unless it was all configured in primary RAID configuration, (AHCI more common in domestic PCs).
   - Initially remove the AMD GPU as it wont work unless PCIe training and driver preload delay configured
   - Verified Secureboot and legacy boot options in BIOS configured as previously set.
   - Reinstalled M6000 → fully functional.  
@@ -34,13 +35,13 @@ It complements the main **Virtualization Journey** by focusing on failures, diag
 - Extra monitor staged for backup PC (normally RDP‑only).  
 
 ### Lessons Learned
-- Single‑monitor reliance = risk.  
+- Single‑monitor reliance = risk/complicates setup.  
 - Symptom ≠ cause: validate with CMOS reset before assuming GPU failure.
-- GPU was fully funcctional despite the warnings unique to GPU failure.
+- GPU was fully functional despite the warnings unique to GPU failure.
 - Functional segregation: compute vs display GPUs.  
 - Cable wear is a hidden failure vector, could eventually lead to concern.  
 - Redundancy planning: spares for monitors and cables.  
-- Operational resilience: document lineage, role separation, and hardware adaptation.  
+- Operational resilience: document full recovery process, symptoms,resolution approach, detailed list of bios previous configuration with back up on USB.  
 
 ---
 
