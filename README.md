@@ -35,7 +35,7 @@ It complements the main **Virtualization Journey** by focusing on failures, diag
 - Extra monitor staged for backup PC (normally RDP‑only).  
 
 ### Lessons Learned
-- Single‑monitor reliance = risk/complicates setup.  
+- Single‑monitor reliance = risk/complicates setup by not spare monitor to test, increasing wear and tear on cable connections.  
 - Symptom ≠ cause: validate with CMOS reset before assuming GPU failure.
 - GPU was fully functional despite the warnings unique to GPU failure.
 - Functional segregation: compute vs display GPUs.  
