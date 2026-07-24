@@ -35,10 +35,10 @@ It complements the main **Virtualisation Journey** by focusing on failures, diag
 - Extra monitor staged for backup PC (normally RDP‑only).  
 
 ### Lessons Learned
-- Single‑monitor reliance = risk/complicates setup by not spare monitor to test, increasing wear and tear on cable connections.  
+- Single‑monitor reliance = complicates setup by, not just by cable swapping, but no spare monitor to test, increasing wear and tear on cable connections.
 - Symptom ≠ cause: validate with CMOS reset before assuming GPU failure.
 - GPU was fully functional despite the warnings unique to GPU failure.
-- Functional segregation: compute vs display GPUs.  
+- Functional segregation: compute vs display GPUs. AMD R7 GPU now used as main display GPU.  
 - Cable wear is a hidden failure vector, could eventually lead to concern.  
 - Redundancy planning: spares for monitors and cables.  
 - Operational resilience: document full recovery process, symptoms,resolution approach, detailed list of bios previous configuration with back up on USB.  
@@ -59,14 +59,16 @@ It complements the main **Virtualisation Journey** by focusing on failures, diag
 - Always **document baseline BIOS configs** (RAID/AHCI, bifurcation, virtualization flags).  
 - **Full‑disk encryption is unforgiving**: a single mismatch or corruption can make valid passwords appear invalid.  
 - **Likely root causes of failure:**  
-  - **Ubuntu Server (LUKS):** Corruption likely due to improper shutdown/OS instability, especially when running from USB stick during KVM installation. Had complete USB drive failures before with VMware ESXi without encryption, so complexity of encryption likely to be no surprise in increasing failure likelihood.
-  - **A single VM crash in VMWare ESXI can lockup the hypervisor:** Seems to be extremely common on when USB stick used to run hypervisor, resulting in complete loss of hypervisor.
+  - **Ubuntu Server (LUKS):** Corruption likely due to improper shutdown/OS instability, especially when running from USB stick during KVM. Had complete USB drive failures before with VMware ESXi without encryption, so complexity of encryption likely to be no surprise in increasing failure likelihood.
+  - **A single VM crash in VMWare ESXI can lockup the hypervisor:** Seems to be extremely common when USB stick used to run hypervisor, resulting in complete loss of hypervisor.
   - **Windows BitLocker (HDD):** Should have been more stable on a 256 GB SSD, however instability Windows 10 can result in complete loss. 
   - **Third attempt Bitlocker (M.2):** partition or full M.2 drive, regardless suspect if Windows crashes it can corrupt encryption. 
   - **Second mechanical drive (encrypted):** Likely same corruption cause — improper shutdown or instability.  
 - **Safer approach:**  
   - Use encryption only for private data or portable encrypted drives.  
   - Avoid full‑disk encryption on unstable or experimental lab hardware.
+
+
   - Keep backups on a removeable drives.
   - Back up LUKS headers (`cryptsetup luksHeaderBackup`) and BitLocker recovery keys separately. Improves odd of recovery not eradicate it.
 
