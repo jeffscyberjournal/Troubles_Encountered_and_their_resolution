@@ -35,12 +35,12 @@ It complements the main **Virtualisation Journey** by focusing on failures, diag
 - Extra monitor staged for backup PC (normally RDP‑only).  
 
 ### Lessons Learned
-- Single‑monitor reliance = complicates setup by, not just by cable swapping, but no spare monitor to test, increasing wear and tear on cable connections.
+- Single‑monitor reliance = complicates setup by, not just by cable swapping, but no spare monitor to test.
 - Symptom ≠ cause: validate with CMOS reset before assuming GPU failure.
 - GPU was fully functional despite the warnings unique to GPU failure.
 - Functional segregation: compute vs display GPUs. AMD R7 GPU now used as main display GPU.  
-- Cable wear is a hidden failure vector, could eventually lead to concern.  
-- Redundancy planning: spares for monitors and cables.  
+- Cable swapping might add wear to GPU sockets could eventually lead to concern.  
+- Redundancy planning: Monitors for each work station bought with new cables.  
 - Operational resilience: document full recovery process, symptoms,resolution approach, detailed list of bios previous configuration with back up on USB.  
 
 ---
