@@ -14,8 +14,8 @@ It complements the main **Virtualisation Journey** by focusing on failures, diag
 
 - **Actions Taken:**  
   - New Monitor obtained to replace damaged one and spare for use on backup PC to avoid sharing.
-  - Removed/reinstalled M6000 GPU → no change.  
-  - Tested with low‑cost AMD GPU → same issue.  
+  - Removed/reinstalled NVIDIA M6000 GPU → no change.  
+  - Tested with low‑cost AMD R7 430 GPU → same issue.  
   - CMOS reset (battery replaced after removing for 10 min unpowered, the installed) → system posted.
   - CMOS battery swap was likely cause as it was at least 3 years old when purchased, likely much older.
 - HP workstations default to RAID, in this case bios would not detect operating system unless it was all configured in primary RAID configuration, (AHCI more common in domestic PCs).
