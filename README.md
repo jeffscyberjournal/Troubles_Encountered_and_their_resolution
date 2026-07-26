@@ -44,7 +44,6 @@ It complements the main **Virtualisation Journey** by focusing on failures, diag
 - Operational resilience: document full recovery process, symptoms,resolution approach, detailed list of bios previous configuration with back up on USB.  
 
 ---
-
 ## BIOS Defaults & Drive Encryption Instability
 
 ### Incident Sequence
@@ -66,7 +65,7 @@ It complements the main **Virtualisation Journey** by focusing on failures, diag
   - **Second mechanical drive (encrypted):** Likely same corruption cause — improper shutdown or instability.  
 - **Safer approach:**  
   - Use encryption only for private data or portable encrypted drives.  
-  - Avoid full‑disk encryption on unstable or experimental lab hardware.
+  - Avoid full‑disk encryption on unstable or experimental lab hardware unless it's just a expendable test data.
 
 
   - Keep backups on a removeable drives.
