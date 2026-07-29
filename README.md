@@ -38,7 +38,7 @@ It complements the main **Virtualisation Journey** by focusing on failures, diag
 - Single‑monitor reliance = complicates setup by, not just by cable swapping, but no spare monitor to test.
 - Symptom ≠ cause: validate with CMOS reset before assuming GPU failure.
 - GPU was fully functional despite the warnings unique to GPU failure.
-- Functional segregation: compute vs display GPUs. AMD R7 GPU now used as main display GPU.  
+- Functional segregation: compute vs display GPUs. AMD R7 GPU now used as main display GPU, M6000 mainly cuda support.  
 - Cable swapping might add wear to GPU sockets could eventually lead to concern.  
 - Redundancy planning: Monitors for each work station bought with new cables.  
 - Operational resilience: document full recovery process, symptoms,resolution approach, detailed list of bios previous configuration with back up on USB.  
@@ -51,7 +51,7 @@ It complements the main **Virtualisation Journey** by focusing on failures, diag
 - **Encryption Attempts:**  
   - BitLocker (Windows) and LUKS (Linux) full‑disk encryption tested.  
   - After instability/reboots, recovery passwords failed despite correctness.  
-  - Data unrecoverable.  
+  - Data unrecoverable. Test stage nothing of value lost.
 
 ### Lessons Learned
 - Enterprise boards often default to **RAID**, unlike consumer boards (AHCI).  
