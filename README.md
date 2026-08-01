@@ -16,7 +16,7 @@ It complements the main **Virtualisation Journey** by focusing on failures, diag
   - New Monitor obtained to replace damaged one and spare for use on backup PC to avoid sharing.
   - Removed/reinstalled NVIDIA M6000 GPU → no change.  
   - Tested with low‑cost AMD R7 430 GPU → same issue.  
-  - CMOS reset (battery replaced after removing for 10 min unpowered, the installed) → system posted.
+  - GPU not recognised until CMOS reset (battery removed and replaced after 10 min unpowered, the installed) → system posted.
   - CMOS battery swap was likely cause as it was at least 3 years old when purchased, likely much older.
 - This required AHCL configured as HP workstations default to RAID. In this case bios would not detect operating system unless it was all configured in primary RAID configuration, (AHCI more common in domestic PCs).
   - Initially remove the AMD GPU R7 as it wont work unless PCIe training and driver preload delay configured
