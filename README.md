@@ -3,6 +3,11 @@
 This document captures incidents and their resolutions during lab development.  
 It complements the main **Virtualisation Journey** by focusing on failures, diagnostics, and recovery steps.
 
+List includes:
+- GPU Failure Investigation & Infrastructure Hardening
+- CMOS & Configuration Dependencies
+- Power supply Issue
+- Proxmox VM lab
 ---
 
 ## GPU Failure Investigation & Infrastructure Hardening
@@ -114,4 +119,7 @@ It complements the main **Virtualisation Journey** by focusing on failures, diag
 - Separating the heatsink from the existing NVMe drives appeared to be a complicated process, often requiring dental floss to break the thermal adhesive between the heatsink and the SSD. With current SSD prices, it seemed risky to remove the heatsink from drives that now cost more than four times what I originally paid for them. As a result, an adapter-based solution was considered instead.
 - As a temporary measure, an external USB enclosure was used with a spare NVMe drive to host the hypervisor.
 - The main issue is that NVMe M.2 uses the PCIe protocol, while a 2.5-inch drive bay uses the SATA protocol. Therefore, a simple SATA adapter is not an option for an NVMe SSD. Such adapters only work with M.2 SATA (NGFF) drives, typically using B-key or B+M-key connectors.
-- The best solution was ultimately not to use a separate drive for Proxmox. Instead, the existing NVMe SSD on the PCIe adapter card was repurposed for Proxmox, while the VMware ESXi virtual machine backups were moved to cold storage for future reference.
+- **Resolution:**
+   - The best solution was ultimately not to use a separate drive for Proxmox. Instead, the existing NVMe SSD on the PCIe adapter card was repurposed for Proxmox, while the VMware ESXi virtual machine backups were moved to cold storage for future reference. 
+   - Backups of all working virtual machines are stored on both a dedicated cold-storage backup disk and a removable backup drive.
+   - This approach reduces the risk of data loss and minimizes downtime, particularly for virtual machines containing customized software and configurations that would be time-consuming to rebuild.
