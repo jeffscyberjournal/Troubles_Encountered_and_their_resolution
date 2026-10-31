@@ -107,3 +107,11 @@ It complements the main **Virtualisation Journey** by focusing on failures, diag
   - Micro outages are logged when the PC that monitors the UPS management is on. Generally not required to run systems all day so this is simply not done.
   - Has highlighted more short less than second outages than expected in area. Area has only had one power outage for longer than 2 hours in times lived here.
   - Requires a few applications replaced that can block PC from shutting down when shutdown process activated by USP, like notepad.exe. 
+
+---
+## Proxmox VM lab
+- Ideally, I wanted to run Proxmox on its own drive, similar to how I previously ran VMware ESXi. That setup worked well, with the hypervisor installed on a USB drive and the virtual machines stored on an NVMe M.2 SSD connected via a PCIe adapter card.
+- Separating the heatsink from the existing NVMe drives appeared to be a complicated process, often requiring dental floss to break the thermal adhesive between the heatsink and the SSD. With current SSD prices, it seemed risky to remove the heatsink from drives that now cost more than four times what I originally paid for them. As a result, an adapter-based solution was considered instead.
+- As a temporary measure, an external USB enclosure was used with a spare NVMe drive to host the hypervisor.
+- The main issue is that NVMe M.2 uses the PCIe protocol, while a 2.5-inch drive bay uses the SATA protocol. Therefore, a simple SATA adapter is not an option for an NVMe SSD. Such adapters only work with M.2 SATA (NGFF) drives, typically using B-key or B+M-key connectors.
+- The best solution was ultimately not to use a separate drive for Proxmox. Instead, the existing NVMe SSD on the PCIe adapter card was repurposed for Proxmox, while the VMware ESXi virtual machine backups were moved to cold storage for future reference.
